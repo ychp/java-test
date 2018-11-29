@@ -65,7 +65,7 @@ public class BeanCopyPerformanceTest {
         for(Map.Entry<String, List<Long>> entry : resultMap.entrySet()) {
             StringBuilder outStr = new StringBuilder("| " + entry.getKey() + " | ");
             for (Long result : entry.getValue()) {
-                outStr.append(BigDecimal.valueOf(result).divide(BigDecimal.valueOf(1000000), 6, RoundingMode.HALF_UP)).append(" ms | ");
+                outStr.append(BigDecimal.valueOf(result).divide(BigDecimal.valueOf(1000000),  3, RoundingMode.HALF_UP)).append(" ms | ");
             }
             System.out.println(outStr.toString());
         }
